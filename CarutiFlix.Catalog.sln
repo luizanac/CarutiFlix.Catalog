@@ -1,0 +1,57 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30114.105
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{C23535F1-8980-46FC-B4A6-DD60E5CA53AD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarutiFlix.Catalog.Api", "src\CarutiFlix.Catalog.Api\CarutiFlix.Catalog.Api.csproj", "{895B6E66-B1B0-4A4E-84C6-DA8C086C560A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarutiFlix.Catalog.Domain", "src\CarutiFlix.Catalog.Domain\CarutiFlix.Catalog.Domain.csproj", "{A1AC99D1-F646-4EF4-8E9D-0F0551BC3BA3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarutiFlix.Catalog.Application", "src\CarutiFlix.Catalog.Application\CarutiFlix.Catalog.Application.csproj", "{5957E51F-51A7-47B5-B40D-E1929BBA3F0B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarutiFlix.Catalog.Infra", "src\CarutiFlix.Catalog.Infra\CarutiFlix.Catalog.Infra.csproj", "{BE4F521C-BD42-4C5F-9776-5A928F53CD6D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{D9436109-00C4-4E79-B40D-0A138EBB2E5D}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+		.dockerignore = .dockerignore
+		README.md = README.md
+		.gitignore = .gitignore
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{895B6E66-B1B0-4A4E-84C6-DA8C086C560A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{895B6E66-B1B0-4A4E-84C6-DA8C086C560A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{895B6E66-B1B0-4A4E-84C6-DA8C086C560A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{895B6E66-B1B0-4A4E-84C6-DA8C086C560A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1AC99D1-F646-4EF4-8E9D-0F0551BC3BA3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1AC99D1-F646-4EF4-8E9D-0F0551BC3BA3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1AC99D1-F646-4EF4-8E9D-0F0551BC3BA3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1AC99D1-F646-4EF4-8E9D-0F0551BC3BA3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5957E51F-51A7-47B5-B40D-E1929BBA3F0B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5957E51F-51A7-47B5-B40D-E1929BBA3F0B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5957E51F-51A7-47B5-B40D-E1929BBA3F0B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5957E51F-51A7-47B5-B40D-E1929BBA3F0B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BE4F521C-BD42-4C5F-9776-5A928F53CD6D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BE4F521C-BD42-4C5F-9776-5A928F53CD6D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BE4F521C-BD42-4C5F-9776-5A928F53CD6D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BE4F521C-BD42-4C5F-9776-5A928F53CD6D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{895B6E66-B1B0-4A4E-84C6-DA8C086C560A} = {C23535F1-8980-46FC-B4A6-DD60E5CA53AD}
+		{A1AC99D1-F646-4EF4-8E9D-0F0551BC3BA3} = {C23535F1-8980-46FC-B4A6-DD60E5CA53AD}
+		{5957E51F-51A7-47B5-B40D-E1929BBA3F0B} = {C23535F1-8980-46FC-B4A6-DD60E5CA53AD}
+		{BE4F521C-BD42-4C5F-9776-5A928F53CD6D} = {C23535F1-8980-46FC-B4A6-DD60E5CA53AD}
+	EndGlobalSection
+EndGlobal

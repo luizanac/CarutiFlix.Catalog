@@ -1,0 +1,29 @@
+version: '3.7'
+services:
+  cf-ravendb:
+    image: ravendb/ravendb:ubuntu-latest
+    volumes:
+      - C:/volume-mounts/caruti-flix-catalog-service/ravendb/config/:/opt/RavenDB/config
+      - C:/volume-mounts/caruti-flix-catalog-service/ravendb/data/:/opt/RavenDB/Server/RavenData
+    environment:
+      - RAVEN_Setup_Mode=None
+    ports:
+      - "38080:8080"
+      - "38888:38888"
+    networks:
+      cf-catalog-network:
+
+  cf-catalog:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    ports:
+      - "5218:80"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - CONFIGURATION=Release
+    networks:
+      cf-catalog-network:
+
+networks:
+  cf-catalog-network:

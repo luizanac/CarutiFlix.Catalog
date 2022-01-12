@@ -1,0 +1,12 @@
+﻿{
+  "profiles": {
+    "CarutiFlix.Catalog.Api": {
+      "commandName": "Project",
+      "launchBrowser": false,
+      "applicationUrl": "http://*:5218",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
