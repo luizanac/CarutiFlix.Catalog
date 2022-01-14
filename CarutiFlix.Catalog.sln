@@ -17,9 +17,11 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution", "Solution", "{D9
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
 		Dockerfile = Dockerfile
-		.dockerignore = .dockerignore
 		README.md = README.md
 		.gitignore = .gitignore
+		docker-compose.watch.yml = docker-compose.watch.yml
+		docker-compose.debug.yml = docker-compose.debug.yml
+		Create-DockerfileSolutionRestore.ps1 = Create-DockerfileSolutionRestore.ps1
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{B71F5929-1BD1-4B6F-9667-BAE282A61F8D}"

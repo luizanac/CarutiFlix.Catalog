@@ -1,19 +1,12 @@
-FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build-env
-EXPOSE 80
-
-ARG CONFIGURATION=Debug
+COPY "CarutiFlix.Catalog.sln" "CarutiFlix.Catalog.sln"
 
 COPY "src/CarutiFlix.Catalog.Api/CarutiFlix.Catalog.Api.csproj" "src/CarutiFlix.Catalog.Api/CarutiFlix.Catalog.Api.csproj"
 COPY "src/CarutiFlix.Catalog.Application/CarutiFlix.Catalog.Application.csproj" "src/CarutiFlix.Catalog.Application/CarutiFlix.Catalog.Application.csproj"
 COPY "src/CarutiFlix.Catalog.Domain/CarutiFlix.Catalog.Domain.csproj" "src/CarutiFlix.Catalog.Domain/CarutiFlix.Catalog.Domain.csproj"
 COPY "src/CarutiFlix.Catalog.Infra/CarutiFlix.Catalog.Infra.csproj" "src/CarutiFlix.Catalog.Infra/CarutiFlix.Catalog.Infra.csproj"
+COPY "test/CarutiFlix.Catalog.Application.Test/CarutiFlix.Catalog.Application.Test.csproj" "test/CarutiFlix.Catalog.Application.Test/CarutiFlix.Catalog.Application.Test.csproj"
 
-RUN dotnet restore src/CarutiFlix.Catalog.Api/CarutiFlix.Catalog.Api.csproj
 
-COPY . ./
-RUN dotnet publish -c $CONFIGURATION -o out
+COPY "NuGet.config" "NuGet.config"
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0
-WORKDIR /app
-COPY --from=build-env /out .
-ENTRYPOINT ["dotnet", "CarutiFlix.Catalog.Api.dll"]
+RUN dotnet restore "CarutiFlix.Catalog.sln"

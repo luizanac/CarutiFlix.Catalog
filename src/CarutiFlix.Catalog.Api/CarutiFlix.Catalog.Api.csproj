@@ -8,10 +8,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CarutiFlix.Catalog.Domain\CarutiFlix.Catalog.Domain.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Content Include="Properties\launchSettings.json" />
+    <ProjectReference Include="..\CarutiFlix.Catalog.Infra\CarutiFlix.Catalog.Infra.csproj" />
   </ItemGroup>
 
 </Project>

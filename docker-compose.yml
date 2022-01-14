@@ -1,27 +1,35 @@
 version: '3.7'
 services:
-  cf-ravendb:
-    image: ravendb/ravendb:ubuntu-latest
-    volumes:
-      - C:/volume-mounts/caruti-flix-catalog-service/ravendb/config/:/opt/RavenDB/config
-      - C:/volume-mounts/caruti-flix-catalog-service/ravendb/data/:/opt/RavenDB/Server/RavenData
+  cf-mongo:
+    image: mongo
+    restart: always
     environment:
-      - RAVEN_Setup_Mode=None
-    ports:
-      - "38080:8080"
-      - "38888:38888"
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: root
+    volumes:
+      - C:/volume-mounts/caruti-flix-catalog-service/mongo/etc:/etc/mongo
+      - C:/volume-mounts/caruti-flix-catalog-service/mongo/data:/data/db
     networks:
       cf-catalog-network:
 
+  cf-mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - "8081:8081"
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: root
+      ME_CONFIG_MONGODB_URL: mongodb://root:root@cf-mongo:27017/
+    networks:
+      cf-catalog-network:
+  
   cf-catalog:
-    build:
-      context: ./
-      dockerfile: Dockerfile
     ports:
       - "5218:80"
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-      - CONFIGURATION=Release
+      - ASPNETCORE_URLS=http://+:80
     networks:
       cf-catalog-network:
 

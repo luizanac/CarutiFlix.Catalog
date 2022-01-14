@@ -1,0 +1,10 @@
+version: '3.7'
+services:
+  cf-catalog:
+    image: mcr.microsoft.com/dotnet/sdk:6.0
+    volumes:
+      - .:/code
+    environment:
+      - DOTNET_USE_POLLING_FILE_WATCHER=true
+    working_dir: /code/src/CarutiFlix.Catalog.Api
+    command: dotnet watch run --no-hot-reload

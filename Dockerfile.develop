@@ -1,0 +1,18 @@
+FROM mcr.microsoft.com/dotnet/sdk:6.0
+ENV ASPNETCORE_ENVIRONMENT=Development
+ENV DOTNET_USE_POLLING_FILE_WATCHER=true
+EXPOSE 5218
+
+WORKDIR /code
+
+COPY ["src/CarutiFlix.Catalog.Api/CarutiFlix.Catalog.Api.csproj", "src/CarutiFlix.Catalog.Api/"]
+COPY ["src/CarutiFlix.Catalog.Application/CarutiFlix.Catalog.Application.csproj", "src/CarutiFlix.Catalog.Application/"]
+COPY ["src/CarutiFlix.Catalog.Domain/CarutiFlix.Catalog.Domain.csproj", "src/CarutiFlix.Catalog.Domain/"]
+COPY ["src/CarutiFlix.Catalog.Infra/CarutiFlix.Catalog.Infra.csproj", "src/CarutiFlix.Catalog.Infra/"]
+
+RUN dotnet restore src/CarutiFlix.Catalog.Api/CarutiFlix.Catalog.Api.csproj 
+COPY . .
+WORKDIR "src/CarutiFlix.Catalog.Api"
+RUN dotnet publish -o  -c Debug
+
+ENTRYPOINT ["dotnet", "watch","run", "--no-hot-reload"]
